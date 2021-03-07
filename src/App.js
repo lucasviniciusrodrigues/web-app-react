@@ -1,22 +1,17 @@
-import logo from './logo.svg';
+import dog from './dog.png';
 import './App.css';
+import glass from './glass.htm';
+import React from "react";
+import Title from "./components/Title";
+import Calvin from "./hooks/calvin";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={dog} className="App-dog" alt="dog" />
+        <img src={glass} className="App-glass"  alt="glass" />
+        <Title title="Você gosta de conversar?" comp={<Calvin />} />
       </header>
     </div>
   );
