@@ -33,10 +33,6 @@
   width: 20vmin;
 }
 
-.App-calvin{
-  visibility: hidden;
-}
-
 @keyframes App-glass-up {
   from {
     transform: rotateX(0deg);

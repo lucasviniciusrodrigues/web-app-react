@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import hum from '../hum.jpg';
-import { useRef, useLayoutEffect } from "react";
 import Button from "../components/Button";
 
 export default () => {
-    const divRef = useRef()
+    //useState => variavel, metodoSeter
+    const [display, setDisplay] = useState(false);
+    const [buttonTitle, setButtonTitle] = useState('Buscar o melhor ouvinte');
 
     function getCalvin() {
+        setDisplay(!display);
+        if (display) {
+            setButtonTitle('Buscar o melhor ouvinte');
+        } else {
+            setButtonTitle('Esconder o melhor ouvinte');
+        }
+        
     }
 
     return (
         <div>
-            <Button onClick={ getCalvin }>Buscar o melhor ouvinte</Button>
-            <img src={hum} className="App-calvin" alt="calvim"/>
+            <Button onClick={ getCalvin }> {buttonTitle} </Button>
+            {
+                display ? <img src={hum} className="App-calvin" alt="calvin"/> : null
+            }
         </div>
     )
 }
